@@ -1,0 +1,16 @@
+TODO - list.
+
+1. add "always matching when correct protocol" - filters which can be used to match protocol. Eg commands like:
+    > eth all 
+    > ip4 all
+
+2. Create own set of filters for -E switch (prefiltering) to be passed down to bs_read(). This will allow setting highlight filter independently from this "what to write in file" - filter.
+
+3. protocol level filtering for display - at least UDP+UDPCP+SYSCOM
+
+4. Remove unused portions and create selecting menu window for filters
+
+5. rewrite man pages
+
+6. possibly integrate epb to this tool.
+

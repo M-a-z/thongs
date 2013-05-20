@@ -1,0 +1,65 @@
+T.H.O.N.G.S   -  
+Textmode Helper On Network Getting Sniffed version 0.5 is out.
+
+This project's roots are in nibbles, and lots of nibbles related things are still floating around.
+However I am slowly getting rid of those.
+
+At runtime you can toggle different windows by pressing F2, F3, F4, F5 and F6.
+
+
+Thongs captures ethernet packets from specified (or all) interfaces. Captured packets are written in pcapNG formatted file which can be later opened by bunch of applications including wireshark.
+Thongs supports “raw” include/exclude/highlight filters in same fashion as nibbles. These filters evaluate the packet data exactly as it is displayed on screen.
+Current version also includes protocol specific filters for certain protocols.
+
+Thongs can now also send ethernet frames. Press F3 at runtime to enable sending view.
+
+Added protocol specific (highlight) filters + human readable output for:
+Ethernet
+IPv4
+ARP
+UDP
+
+Current protocol based highlight filters:
+
+ETHERNET:
+	dst                    destination mac format aa:bb:cc:dd:ee:ff 
+             src                    source mac format aa:bb:cc:dd:ee:ff 
+vlan                  VLAN ID
+
+IPv4:
+       	dip                    destination IP in dotted decimal format 
+sip                    source IP in dotted decimal format 
+ttl                     TTL value
+len                    Total Len
+
+ARP:
+    	dip                   	destination IP in dotted decimal format
+sip                   	source IP in dotted decimal format
+dmac                	destination mac in format aa:bb:cc:dd:ee:ff
+smac                 	source mac in format aa:bb:cc:dd:ee:ff
+req                    	ARP packet with response mode (No value needed)
+resp                  	ARP packet with response mode (No value needed)
+
+UDP:
+       	dport                 	destination port
+sport                  source port
+len                    	UDP data length
+
+
+NOTE: All filters apply only displayed data, not data stored in file.
+
+
+BUGS:
+Scrolling does not work correctly.
+Most of the protocol filters are quite untested. Also there may be some endianess issues left in header printings.
+
+
+TODO:
+-	UDPCP protocol.
+-	Fix scrolling for this version.
+-	Create version with fixed size ram buffer capture – perhaps no scrolling.
+-	Allow filtering packets which are shown/written to file.
+
+
+
+--Enjoy.

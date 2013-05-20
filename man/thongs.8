@@ -1,0 +1,122 @@
+.TH thongs 8 "30 January 2012" "v 0.5"
+.SH NAME
+T.H.O.N.G.S - Textmode Helper On Network Getting Sniffed
+.SH SYNOPSIS
+.B thongs-sniffer
+[
+.B -vh?
+] [
+.B-p 
+.I protocol
+] [
+.B -f
+.I logfile
+] [
+.B -i
+.I interface
+] [
+.B -d
+.I debuglog
+] [
+.B -c
+.I configfile
+] [
+.B -a
+.I fcmip
+] [
+.B -b
+.I fspip
+] [
+.B -A
+.I fcmport
+] [
+.B -B
+.I fspport
+]
+
+
+
+
+
+.SH DESCRIPTION
+.BR "thongs" "(8) is a console tool for listening, logging, generating and filtering raw ethernet frames. Thongs supports filtering print lines based on keystring lists - same way as " "nibbles" "(8). Thongs requires root privilegies in order to work. NOTE: default config file path will be propably under root's home... This is a bug to be fixed in later releases (/etc/thongs/ should be the new path). Thongs 0.5 adds support for some protocol based highlight filters, and also prints headers for known protocols in more human readable manner. The capture file thongs writes in in pcapNG format. Protocols the thongs 0.5 supports are: Ethernet, IPv4, ARP and UDP. See runtime help by pressing F2 for details on setting filters. Also very untested ethernet frame generation is added, press F3 at runtime to try it out.
+ 
+
+.SH OPTIONS
+.TP
+.B -p --protocol
+protocol to listen. Possible values are ip4, ip6, arp, (pause, vlan - not tested). Default is to listen all protocols.
+.B -i --interface 
+interface to listen. Default is to listen all interfaces.
+.TP
+.B -c --config
+configuration file. You can set default pcap NG file, protocol/interface to listen and raw filters. 
+
+.RI "protocol=" "protocol"
+
+.RI "interface=" "interface"
+
+.RI "filter=" "filterstring"
+
+.RI "udplog=" "logname"
+
+.RI  "For " "filterstring" " syntax see "
+.BR "FILTER QUEUES" " section below. T.H.O.N.G.S searches /etc/thongs/default.conf if no -c option is given."
+.TP
+.B -f --file
+followed by name of pcapng package capture file thongs is about to write.
+.TP
+.B -d --debug
+followed by name of debug log file. Enables debug logs (usefull mainly for people interested in tweaking T.H.O.N.G.S).
+.TP
+.B -v --version
+display version and exit
+.TP
+.B -h --help
+display help and exit
+.TP
+.B -?
+display help and exit
+
+.SH FILTER QUEUES
+.RI "Thongs supports setting three types of filter strings. " "exclude" ", " "include" " and " "highlight" ". When filters are set, each received print is searched for strings matching filter. If match is found filtering rule is applied to whole print. Filters are case sensitive. Filters can be cleared by typing "
+.BR "clear" " and pressing enter."
+.TP
+.I exclude filters
+.RB "When print matches exclude filter, it is never displayed. It does not matter if same print matched to highlight or include strings. Strings can be added as exclude filters by typing minus sign " "-" " immediately followed by intended exclude filter string and pressing enter."
+.TP
+.I include filters
+.RB "When first include filter is applied, T.H.O.N.G.S stops showing all prints which do not contain at least one include keystring. It does not matter if print matches highlight or exclude filters. Strings can be added as include filters by typing plus sign " "+" " immediately followed by intended include filter string and pressing enter."
+.TP
+.I highlight filters
+.RB "When print line has passed include and exclude rules, it is still searched for highlight keystrings. If print contains highlight string, it is highlighted using colors. This naturally requires that used terminal supports colors. Strings can be added as highlight filters by typing " "!" " immediately followed by intended highlight filter string and pressing enter."
+
+.RI "User can also specify filters as comma separated list. Eg " "-spam,+emails,!important,!Matti" " would add filters to exclude every print not containing word emails, and also exclude every print containing word spam. Prints passing those rules and containing words important or Matti, would be highlighted. NOTE: due to this keywords cannot contain commas."
+
+.SH RUNTIME COMMANDS
+.RB "In addition to setting filters at runtime user can issue commands " "ctrl+p" " to pause screen, buttons from " "F2" " to " "F6" " can be used tp toggle showing of different function screens. " "F2" " displays runtime help screen, " "F3" " enables ethernet message sender and " "F4" " pops up definition finder. " "F5" " can be used to view installed filter strings. " "F6" " displays a list of messages stored in msgtemplate file (not yet implemented)." "ESC" " quits program.
+
+.SH FILES
+.I sample.config
+Example config file
+.I msgtemplates
+Example saved etherenet message file
+.I /etc/thongs/default.conf
+Configuration file
+.I /etc/thongs/msgtemplates
+Saved etherenet messages for sending
+.RS
+Sample configuration file. (not yet done for thongs)
+.RE
+.I msgtemplates
+.RS
+File for defining ethernet messages. (not yet done for thongs)
+.RE
+.SH BUGS
+This is still at starting point - lots of stupid things. Furthermore, this is work derived from N.I.B.B.L.E.S => this man page is written in another tool's point of view.
+Filter keystrings cannot contain commas.
+.TP
+Please send all bugs to mazziesaccount@gmail.com
+.SH AUTHOR
+Matti Vaittinen <mazziesaccount@gmail.com>
+
