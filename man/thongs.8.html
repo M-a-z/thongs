@@ -1,0 +1,97 @@
+<HTML>
+<BODY>
+<PRE>
+<!-- Manpage converted by man2html 3.0.1 -->
+SYNOPSIS
+       thongs-sniffer [ -vh?  ] [ protocol ] [ -f logfile ] [ -i interface ] [ -d debuglog ] [ -c configfile ] [ -a fcmip ] [ -b fspip ] [ -A fcmport ] [ -B fspport ]
+
+
+
+
+
+
+DESCRIPTION
+       <B>thongs(8)</B>  is a console tool for listening, logging, generating and filtering raw ethernet frames. Thongs supports filtering print lines based on keystring lists - same way
+       as <B>nibbles(8)</B>. Thongs requires root privilegies in order to work. NOTE: default config file path will be propably under root's home... This is a bug to be  fixed  in  later
+       releases (/etc/thongs/ should be the new path). Thongs 0.5 adds support for some protocol based highlight filters, and also prints headers for known protocols in more human
+       readable manner. The capture file thongs writes in in pcapNG format. Protocols the thongs 0.5 supports are: Ethernet, IPv4, ARP and UDP. See runtime help by pressing F2 for
+       details on setting filters. Also very untested ethernet frame generation is added, press F3 at runtime to try it out.
+
+
+
+OPTIONS
+       -p --protocol
+              protocol  to  listen. Possible values are ip4, ip6, arp, (pause, vlan - not tested). Default is to listen all protocols.  -i --interface interface to listen. Default
+              is to listen all interfaces.
+
+       -c --config
+              configuration file. You can set default pcap NG file, protocol/interface to listen and raw filters.
+
+              protocol=protocol
+
+              interface=interface
+
+              filter=filterstring
+
+              udplog=logname
+
+              For filterstring syntax see FILTER QUEUES section below. T.H.O.N.G.S searches /etc/thongs/default.conf if no -c option is given.
+
+       -f --file
+              followed by name of pcapng package capture file thongs is about to write.
+
+       -d --debug
+              followed by name of debug log file. Enables debug logs (usefull mainly for people interested in tweaking T.H.O.N.G.S).
+
+       -v --version
+              display version and exit
+
+       -h --help
+              display help and exit
+
+       -?     display help and exit
+
+
+FILTER QUEUES
+       Thongs supports setting three types of filter strings. exclude, include and highlight. When filters are set, each received print is searched for strings matching filter. If
+              filter string and pressing enter.
+
+              User can also specify filters as comma separated list. Eg -spam,+emails,!important,!Matti would add filters to exclude every print not containing  word  emails,  and
+              also  exclude  every print containing word spam. Prints passing those rules and containing words important or Matti, would be highlighted. NOTE: due to this keywords
+              cannot contain commas.
+
+
+RUNTIME COMMANDS
+       In addition to setting filters at runtime user can issue commands ctrl+p to pause screen, buttons from F2 to F6 can be used tp toggle showing of different function screens.
+       F2 displays runtime help screen, F3 enables ethernet message sender and F4 pops up definition finder. F5 can be used to view installed filter strings. F6 displays a list of
+       messages stored in msgtemplate file (not yet implemented).ESC quits program.
+
+
+FILES
+       sample.config Example config file msgtemplates Example saved etherenet message file /etc/thongs/default.conf Configuration  file  /etc/thongs/msgtemplates  Saved  etherenet
+       messages for sending
+              Sample configuration file. (not yet done for thongs)
+       msgtemplates
+              File for defining ethernet messages. (not yet done for thongs)
+
+BUGS
+       This  is  still at starting point - lots of stupid things. Furthermore, this is work derived from N.I.B.B.L.E.S =&gt; this man page is written in another tool's point of view.
+       Filter keystrings cannot contain commas.
+
+       Please send all bugs to mazziesaccount@gmail.com
+
+AUTHOR
+       Matti Vaittinen &lt;mazziesaccount@gmail.com&gt;
+
+
+
+
+v 0.5                                                                             30 January 2012                                                                         <B>thongs(8)</B>
+</PRE>
+<HR>
+<ADDRESS>
+Man(1) output converted with
+<a href="http://www.oac.uci.edu/indiv/ehood/man2html.html">man2html</a>
+</ADDRESS>
+</BODY>
+</HTML>
