@@ -14,7 +14,7 @@
 <TITLE>thongs - raw ethernet frame sniffer and generator - </TITLE>  
 
 
-<script>
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -43,7 +43,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 
 <center><h1 class="header">thongs - raw ethernet frame sniffer and generator</h1></center>
-<br />
+<br>
 <h3 class="header2">What is thongs</h3>
 <p class="normal_chapter">
 
@@ -56,12 +56,13 @@ Thongs can be used to:
 <li>Logging frames to pcapNG file</li>
 <li>Displaying frames on console</li>
 <li>filtering displayed / stored frames based on keystring lists and some protocol aware filters</li>
-<li>There are 3 types of filters</li>
+<li>There are 3 types of filters
     <ul>
         <li>include filters</li>
         <li>exclude filters</li>
         <li>highlight filters</li>
     </ul>
+</li>
 <li>Ethernet packet crafting and sending</li>
 <li>Storing/Loading crafted packets to text file</li>
 <li>Finding C structures/definitions from header files</li>
@@ -70,15 +71,15 @@ Thongs can be used to:
 
 <h3 class="header2">How to obtain it</h3>
 <p class="normal_chapter">
-Development version of thongs is found from <a href="https://github.com/M-a-z/thongs">github</a>.<br />
+Development version of thongs is found from <a href="https://github.com/M-a-z/thongs">github</a>.<br>
 It can also be fetched using git client by issuing command
 <p class="command_example">
 git clone https://github.com/M-a-z/thongs.git
 <p class="normal_chapter">
 After this you need to compile and (optionally) install thongs by issuing commands
 <p class="command_example">
-make<br />
-sudo make install<br />
+make<br>
+sudo make install<br>
 <p class="normal_chapter">
 in folder where Makefile is located. Note that thongs needs ncurses library (also form, menu and panel libraries). Typically these are all included in ncurses development library, often called as ncurses-devel. On Fedora you can install it by issuing command
 <p class="command_example">
@@ -86,7 +87,7 @@ sudo yum install ncurses-devel
 <p class="normal_chapter">
 You can also download on of the release tarball(s) if you dislike git or wish to have something a bit more stable than development repository snapshot. Following tarballs are curretly available:
 <p class="tarball_list">
-Thongs version 0.6: <a href="https://xp-dev.com/svn/thongs/tarballs/0.6.tgz">0.6.tgz</a>.<br />
+Thongs version 0.6: <a href="https://xp-dev.com/svn/thongs/tarballs/0.6.tgz">0.6.tgz</a>.<br>
 
 <h3 class="header2">More information</h3>
 <p class="normal_chapter">
@@ -104,12 +105,12 @@ thongs-sniffer --help
 <h3 class="header2">Development ideas/needs or just an urge to write C?</h3>
 <p class="normal_chapter">
 Feel free to contact me via email (mazziesaccount@gmail.com) or just fork the project from github, improve thongs and send me patch(es). I am open to suggestions and glad when receiving bug fixes. Adding support for new protocols should not be terribly hard. You can check the protocolparser.c and protocolparser.h files for generic protocol parsing operations, and some of the protocolparser_&lt;protocol&gt; files for protocol specific portions.
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
@@ -117,7 +118,7 @@ Feel free to contact me via email (mazziesaccount@gmail.com) or just fork the pr
 
 
 <p class="other_projects">
-See also my other projects:<br />
+See also my other projects:<br>
 <a href="http://m-a-z.github.io/nibbles/">nibbles - UDP print listener</a> |
 <a href="http://m-a-z.github.io/nsn/">NSN - Network Status Notifier</a> | 
 <a href="http://m-a-z.github.io/epb/">epb - Ethernet Packet Bombardier</a> 
@@ -125,12 +126,16 @@ See also my other projects:<br />
 <p class="footer">
 Matti 'Maz'  Vaittinen, Oulu, FINLAND email: mazziesaccount@gmail.com
 <p>
-<b>Liked this program?</b> <br /><i>Donate to help me spend more time developing these =)</i><br />
+<b>Liked this program?</b> <br><i>Donate to help me spend more time developing these =)</i><br>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="K5ULTZQSUMWC2" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-
+<input type="hidden" name="cmd" value="_s-xclick" >
+<input type="hidden" name="hosted_button_id" value="K5ULTZQSUMWC2" >
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" >
+</form>
+<p>
+<a href="http://validator.w3.org/check?uri=referer"><img
+src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
+</p>
 
 </body>
 </html>
