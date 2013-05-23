@@ -1,3 +1,6 @@
+---
+  layout: dummy
+---
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <HTML> <HEAD> 
 <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
@@ -13,35 +16,10 @@
 <LINK REL="stylesheet" TYPE="text/css" href="style/thongs.css">   
 <TITLE>thongs - raw ethernet frame sniffer and generator - </TITLE>  
 
-
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-8629995-3', 'm-a-z.github.io');
-  ga('send', 'pageview');
-
-</script>
-
-
-
+{% include google_analytics.html %}
 </HEAD>     
 <body> 
-
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-2999778840133894";
-/* banneri */
-google_ad_slot = "1226030022";
-google_ad_width = 468;
-google_ad_height = 60;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-
+{% include ad_banner.html %}
 <center><h1 class="header">thongs - raw ethernet frame sniffer and generator</h1></center>
 <br>
 <h3 class="header2">What is thongs</h3>
@@ -105,37 +83,6 @@ thongs-sniffer --help
 <h3 class="header2">Development ideas/needs or just an urge to write C?</h3>
 <p class="normal_chapter">
 Feel free to contact me via email (mazziesaccount@gmail.com) or just fork the project from github, improve thongs and send me patch(es). I am open to suggestions and glad when receiving bug fixes. Adding support for new protocols should not be terribly hard. You can check the protocolparser.c and protocolparser.h files for generic protocol parsing operations, and some of the protocolparser_&lt;protocol&gt; files for protocol specific portions.
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-<p class="other_projects">
-See also my other projects:<br>
-<a href="http://m-a-z.github.io/nibbles/">nibbles - UDP print listener</a> |
-<a href="http://m-a-z.github.io/nsn/">NSN - Network Status Notifier</a> | 
-<a href="http://m-a-z.github.io/epb/">epb - Ethernet Packet Bombardier</a> 
-
-<p class="footer">
-Matti 'Maz'  Vaittinen, Oulu, FINLAND email: mazziesaccount@gmail.com
-<p>
-<b>Liked this program?</b> <br><i>Donate to help me spend more time developing these =)</i><br>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" >
-<input type="hidden" name="hosted_button_id" value="K5ULTZQSUMWC2" >
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" >
-</form>
-<p>
-<a href="http://validator.w3.org/check?uri=referer"><img
-src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
-</p>
-
+{% include footer.html %}
 </body>
 </html>
