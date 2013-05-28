@@ -1,25 +1,10 @@
 ---
-  layout: dummy
+  layout: basic
+  meta_description: thongs - raw ethernet frame sniffer and generator
+  meta_keywords: thongs, ethernet, sniffer, packet, generator, analyse, filter, protocols, promiscuous, raw, frames, linux, console, UDP, ip, arp, icmp, udpcp
+  css_file: style/thongs.css
+  title: thongs - raw ethernet frame sniffer and generator
 ---
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
-<HTML> <HEAD> 
-<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<META NAME="Author" CONTENT="Matti Vaittinen">
-<META NAME="Description" CONTENT="thongs - raw ethernet frame sniffer and generator">
-<META NAME="Keywords" CONTENT="thongs, ethernet, sniffer, packet, generator, analyse, filter, protocols, promiscuous, raw, frames, linux, console, UDP, ip, arp, icmp, udpcp">
-<META NAME="Language" CONTENT="EN">
-<META NAME="Abstract" CONTENT="thongs - raw ethernet frame sniffer and generator">
-<META NAME="Designer" CONTENT="Matti Vaittinen">
-<META NAME="Distribution" CONTENT="Global">  
-<META NAME="Robots" CONTENT="All">  
-<!--<LINK REL="SHORTCUT ICON" HREF="http://www.student.oulu.fi/~mavaitti/images/av2.ico"> -->
-<LINK REL="stylesheet" TYPE="text/css" href="style/thongs.css">   
-<TITLE>thongs - raw ethernet frame sniffer and generator - </TITLE>  
-
-{% include google_analytics.html %}
-</HEAD>     
-<body> 
-{% include ad_banner.html %}
 <center><h1 class="header">thongs - raw ethernet frame sniffer and generator</h1></center>
 <br>
 <h3 class="header2">What is thongs</h3>
@@ -47,26 +32,6 @@ Thongs can be used to:
 <li>Using config file to set log file name, initial filters etc.</li>
 </ul>
 
-<h3 class="header2">How to obtain it</h3>
-<p class="normal_chapter">
-Development version of thongs is found from <a href="https://github.com/M-a-z/thongs">github</a>.<br>
-It can also be fetched using git client by issuing command
-<p class="command_example">
-git clone https://github.com/M-a-z/thongs.git
-<p class="normal_chapter">
-After this you need to compile and (optionally) install thongs by issuing commands
-<p class="command_example">
-make<br>
-sudo make install<br>
-<p class="normal_chapter">
-in folder where Makefile is located. Note that thongs needs ncurses library (also form, menu and panel libraries). Typically these are all included in ncurses development library, often called as ncurses-devel. On Fedora you can install it by issuing command
-<p class="command_example">
-sudo yum install ncurses-devel
-<p class="normal_chapter">
-You can also download on of the release tarball(s) if you dislike git or wish to have something a bit more stable than development repository snapshot. Following tarballs are curretly available:
-<p class="tarball_list">
-Thongs version 0.6: <a href="https://xp-dev.com/svn/thongs/tarballs/0.6.tgz">0.6.tgz</a>.<br>
-
 <h3 class="header2">More information</h3>
 <p class="normal_chapter">
 There is <a href="man/thongs.8.html">man pages for thongs</a> online and included in downloads. After installing thongs you should be able to read them using command
@@ -83,6 +48,3 @@ thongs-sniffer --help
 <h3 class="header2">Development ideas/needs or just an urge to write C?</h3>
 <p class="normal_chapter">
 Feel free to contact me via email (mazziesaccount@gmail.com) or just fork the project from github, improve thongs and send me patch(es). I am open to suggestions and glad when receiving bug fixes. Adding support for new protocols should not be terribly hard. You can check the protocolparser.c and protocolparser.h files for generic protocol parsing operations, and some of the protocolparser_&lt;protocol&gt; files for protocol specific portions.
-{% include footer.html %}
-</body>
-</html>
