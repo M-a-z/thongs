@@ -17,7 +17,12 @@ margin: 20px;
 div.version_history{
     font-family:Bookman Old Style, Century, Times New Roman; color:yellow; font-size:10pt; text-align: center;
 }
+.navbar a:active {color:white;text-decoration:none}
+.navbar a:link {color:white;text-decoration:none}
+.navbar a:visited {color:white;text-decoration:none}
+.navbar a:hover {color:white;text-decoration:none}
 table.navbar{
+
 text-align: center; font-variant:small-caps; font-size:20pt; color:white; font-weight:bold; border-top:1px solid white; border-right:1px solid black; border-bottom:2px solid white; border-left:1px solid black; width:100%;
 }
 .tarball_list{
@@ -35,7 +40,7 @@ font-family:Bookman Old Style, Century, Times New Roman; color:#FF6633; font-siz
 
 
 .header{
-font-variant:small-caps; color:white; font-weight:bold; border-top:1px solid white; border-right:1px solid black; border-bottom:2px solid white; border-left:1px solid black;
+font-variant:small-caps; color:white; font-weight:bold; 
 }
 .header2{
 font-variant:small-caps; color:white; font-weight:bold;
