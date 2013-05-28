@@ -25,7 +25,7 @@ text-align: center; font-variant:small-caps; font-size:20pt; color:white; font-w
 .navbar a:active {color:white;text-decoration:none}
 .navbar a:link {color:white;text-decoration:none}
 .navbar a:visited {color:white;text-decoration:none}
-.navbar a:hover {color:silver;text-decoration:underline}
+.navbar a:hover {color:blue;text-decoration:none}
 .tarball_list{
 margin: 20px;
 }
