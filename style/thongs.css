@@ -20,7 +20,7 @@ div.version_history{
 .navbar a:active {color:white;text-decoration:none}
 .navbar a:link {color:white;text-decoration:none}
 .navbar a:visited {color:white;text-decoration:none}
-.navbar a:hover {color:silver;text-decoration:none}
+.navbar a:hover {color:silver;text-decoration:underline}
 table.navbar{
 
 text-align: center; font-variant:small-caps; font-size:20pt; color:white; font-weight:bold; border-top:1px solid white; border-right:1px solid black; border-bottom:2px solid white; border-left:1px solid black; width:100%;
