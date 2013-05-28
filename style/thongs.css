@@ -18,7 +18,7 @@ div.version_history{
     font-family:Bookman Old Style, Century, Times New Roman; color:yellow; font-size:10pt; text-align: center;
 }
 .navbar{
-font-variant:small-caps; color:white; font-weight:bold; border-top:1px solid white; border-right:1px solid black; border-bottom:2px solid white; border-left:1px solid black; font-size:20pt;
+font-variant:small-caps; color:white; font-weight:bold; border-top:1px solid white; border-right:1px solid black; border-bottom:2px solid white; border-left:1px solid black; font-size:20pt; text-align: center;
 }
 .tarball_list{
 margin: 20px;
