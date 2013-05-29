@@ -32,7 +32,7 @@ text-align: center; font-variant:small-caps; font-size:20pt; color:white; font-w
 .navbar a:hover {color:blue;text-decoration:none}
 /* top menu cell spacing in basic layout */
 .nav_cell{
-    padding-bottom: 45px;
+    padding-bottom:80px;
 }
 
 .tarball_list{
@@ -50,7 +50,7 @@ font-family:Bookman Old Style, Century, Times New Roman; color:#FF6633; font-siz
 
 
 .header{
-font-variant:small-caps; color:white; font-weight:bold; 
+font-variant:small-caps; color:white; font-weight:bold; text-align: center;
 }
 .header2{
 font-variant:small-caps; color:white; font-weight:bold;
