@@ -11,24 +11,28 @@ A:link {color:#0099ff;text-decoration:none}
 A:visited {color:#900090;text-decoration:none}
 A:hover {color:white;text-decoration:underline}
 
+/* This is what most chapters are */
+/* This could perhaps be the body defaults? */
 .normal_chapter{
 margin: 20px;
 }
+
+/* for version listing like with epb - unused in thongs atm */
 div.version_history{
     font-family:Bookman Old Style, Century, Times New Roman; color:yellow; font-size:10pt; text-align: center;
 }
-table.navbar{
 
+/* menu on top */
+table.navbar{
 text-align: center; font-variant:small-caps; font-size:20pt; color:white; font-weight:bold; border-top:1px solid white; border-right:1px solid black; border-bottom:2px solid white; border-left:1px solid black; width:100%;
 }
-
 .navbar a:active {color:white;text-decoration:none}
 .navbar a:link {color:white;text-decoration:none}
 .navbar a:visited {color:white;text-decoration:none}
 .navbar a:hover {color:blue;text-decoration:none}
-
+/* top menu cell spacing in basic layout */
 .nav_cell{
-    padding-bottom: 15px;
+    padding-bottom: 45px;
 }
 
 .tarball_list{
