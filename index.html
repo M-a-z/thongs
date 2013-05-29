@@ -5,7 +5,7 @@
   css_file: style/thongs.css
   title: thongs - raw ethernet frame sniffer and generator
 ---
-<center><h1 class="header">thongs - raw ethernet frame sniffer and generator</h1></center>
+<h1 class="header">thongs - raw ethernet frame sniffer and generator</h1>
 <br>
 <h3 class="header2">What is thongs</h3>
 <p class="normal_chapter">
@@ -31,6 +31,18 @@ Thongs can be used to:
 <li>Finding C structures/definitions from header files</li>
 <li>Using config file to set log file name, initial filters etc.</li>
 </ul>
+
+<h3 class="header2">Install</h3>
+After obtaining thongs this you need to compile and (optionally) install it by issuing commands
+<p class="command_example">
+make<br>
+sudo make install<br>
+<p class="normal_chapter">
+in folder where Makefile is located. Note that thongs needs ncurses library (also form, menu and panel libraries). Typically these are all included in ncurses development library, often called as ncurses-devel. On Fedora you can install ncurses by issuing command
+<p class="command_example">
+sudo yum install ncurses-devel
+
+
 
 <h3 class="header2">More information</h3>
 <p class="normal_chapter">
