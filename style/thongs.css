@@ -26,6 +26,11 @@ text-align: center; font-variant:small-caps; font-size:20pt; color:white; font-w
 .navbar a:link {color:white;text-decoration:none}
 .navbar a:visited {color:white;text-decoration:none}
 .navbar a:hover {color:blue;text-decoration:none}
+
+.nav_cell{
+    padding-bottom: 15px;
+}
+
 .tarball_list{
 margin: 20px;
 }
@@ -51,6 +56,7 @@ font-variant:small-caps; color:white; font-weight:bold;
 }
 p.footer{ background:#999999; font-family:courier; color:white; border-top:1px solid white; border-right:1px solid black; border-bottom:2px solid white; border-left:1px solid black; text-align: center; 
 }
+/*
 .indeksi{ 
 background:#000066; border-top:4px solid #f0f0f0; border-left:4px solid green; border-right:4px solid green; border-bottom:4px solid green; font-family:Bookman Old Style, Century, Times New Roman; color:#FF6633; font-size:10pt; Vertical-Align:text-top;
 }
@@ -76,5 +82,6 @@ background:#ffffff; border-bottom:4px solid #f0f0f0; border-left:4px solid green
 .indeksi_ylaosa A:hover {color:black;text-decoration:underline}
 .htmltags{ text-align:left; font-size:130% }
 .htmlcell{ color:silver; border:1px solid silver; }
+*/
 
 --!>
