@@ -46,7 +46,11 @@ sudo yum install ncurses-devel
 
 <h3 class="header2">More information</h3>
 <p class="normal_chapter">
-There is <a href="man/thongs.8.html">man pages for thongs</a> online and included in downloads. After installing thongs you should be able to read them using command
+Thongs provides minimal help when ran with --help option.
+<p class="command_example">
+thongs-sniffer --help
+<p class="normal_chapter">
+There is also <a href="man/thongs.8.html">man pages for thongs</a> online and included in downloads. You should be able to read them using command
 <p class="command_example">
 man thongs
 <p class="normal_chapter">
@@ -54,9 +58,7 @@ or even without installation by switching into man folder included in packet and
 <p class="command_example">
 man ./thongs.8
 <p class="normal_chapter">
-Thongs can also display runtime help when F2 is pressed, or give command options when run as:
-<p class="command_example">
-thongs-sniffer --help
+Thongs can also display runtime help when F2 is pressed.
 <h3 class="header2">Development ideas/needs or just an urge to write C?</h3>
 <p class="normal_chapter">
 Feel free to contact me via email (mazziesaccount@gmail.com) or just fork the project from github, improve thongs and send me patch(es). I am open to suggestions and glad when receiving bug fixes. Adding support for new protocols should not be terribly hard. You can check the protocolparser.c and protocolparser.h files for generic protocol parsing operations, and some of the protocolparser_&lt;protocol&gt; files for protocol specific portions.
