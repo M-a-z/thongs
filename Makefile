@@ -18,6 +18,9 @@ TGT_STATIC=bin/thongs_static
 all: thongs
 man: thongs.8.gz
 
+test:
+	$(CC) -Wall src/maz_list_test.c -o bin/maz_list_test
+
 thongs: $(SRC)
 	$(CC) $(CFLAGS) -o $(TGT) $(SRC) $(LDFLAGS) $(LIBS)
 
@@ -46,6 +49,7 @@ clean:
 	rm -rf bin/testkeys
 	rm -rf $(WINTGT_STATIC)
 	rm -rf $(TGT_STATIC)
+	rm -rf bin/maz_list_test
 
 
 thongs.8.gz: man/thongs.8
