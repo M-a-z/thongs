@@ -42,7 +42,7 @@
 //#define debug
 
 #define ALIGN_SIZE 4
-#define VERSION "\n0.7rc -  )___(\n        (\\___/)\n"
+#define VERSION "\n0.7   -  )___(\n        (\\___/)\n"
 #define OPTSTRING "c:d:Ee:f:i:p:vh?"
 #define EARLY_DBGPR printf
 /* /altGR + s */
