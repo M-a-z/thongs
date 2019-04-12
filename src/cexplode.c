@@ -87,8 +87,8 @@ char *Cexplode_removeNth(int nro,CexplodeStrings *exp_obj)
     }
     if(exp_obj->index>=nro)
         exp_obj->index--;
-	if(nro==exp_obj->amnt)
-		exp_obj->sepwasatend=1;
+    if(nro==exp_obj->amnt)
+        exp_obj->sepwasatend=1;
     retval=exp_obj->strings[nro-1];
     memmove(&(exp_obj->strings[nro-1]),&(exp_obj->strings[nro]),(exp_obj->amnt-nro)*sizeof(char *));
     exp_obj->amnt--;
@@ -326,7 +326,7 @@ void Cexplode_free_allButPieces(CexplodeStrings exp_obj)
 	if(NULL!=exp_obj.separator)
 		free(exp_obj.separator);
 	if(NULL!=exp_obj.strings)
-    	free(exp_obj.strings);
+		free(exp_obj.strings);
 	exp_obj.amnt=0;
 	exp_obj.separator=NULL;
 	exp_obj.strings=NULL;
@@ -339,12 +339,12 @@ void Cexplode_free(CexplodeStrings exp_obj)
 	exp_obj.sepwasatend=0;
 	exp_obj.startedWdelim=0;
 	exp_obj.index=0;
-    for(;i<exp_obj.amnt;i++)
-        free(exp_obj.strings[i]);
+	for(;i<exp_obj.amnt;i++)
+		free(exp_obj.strings[i]);
 	if(NULL!=exp_obj.separator)
 		free(exp_obj.separator);
 	if(NULL!=exp_obj.strings)
-    	free(exp_obj.strings);
+		free(exp_obj.strings);
 	exp_obj.amnt=0;
 	exp_obj.separator=NULL;
 	exp_obj.strings=NULL;

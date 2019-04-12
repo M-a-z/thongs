@@ -38,14 +38,12 @@ typedef struct node_list
 ({ \
     typeof((list)+1) _tmp; \
     for_each_maz_list(list,_tmp) \
-/*    for(_tmp=MAZ_LIST_GET_FIRST((list));_tmp;_tmp=MAZ_LIST_GET_NEXT((list))) \ */ \
         if(!memcmp((((char*)(_tmp))+sizeof(node_list)),data,sizeof(*data))) \
         { \
             break; \
         } \
     _tmp; \
 })
-//    typeof((list)+1) _found; 
 #define MAZ_LIST_DEL(list,data) \
 ({ \
     node_list *_found; \

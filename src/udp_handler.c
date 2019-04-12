@@ -281,7 +281,7 @@ static int read_portcfgfile(udp_handler *_this,FILE *cf)
     {
         int found=0;
         if(!_this->protocol)
-            if(1==(rval=fscanf(cf,"protocol=%a[^\n]\n",&line)))
+            if(1==(rval=fscanf(cf,"protocol=%m[^\n]\n",&line)))
             {
                 found=1;
                 DEBUGPR("Detected protocol from config file (%s)\n",line);
@@ -290,7 +290,7 @@ static int read_portcfgfile(udp_handler *_this,FILE *cf)
                 free(line);
             }
         if(!_this->ifname)
-            if(1==(rval=fscanf(cf,"ifname=%a[^\n]\n",&line)))
+            if(1==(rval=fscanf(cf,"ifname=%m[^\n]\n",&line)))
             {
                 found=1;
                 DEBUGPR("Detected ifname rom config file (%s)\n",line);

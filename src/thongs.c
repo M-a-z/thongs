@@ -554,6 +554,7 @@ static void display_udpdata(stringfilter *filters,sdisplayhandler *displayhandle
         }
     }
 }
+#if 0
 static int argchk(char *arg, unsigned long int lower, unsigned int upper, unsigned long int *value)
 {
     char *chkptr;
@@ -579,6 +580,7 @@ static int argchk(char *arg, unsigned long int lower, unsigned int upper, unsign
     return 0;
 
 }
+#endif
 /* I should have written scan_string() in same fashion the scan_uint and scan_ip are done... */
 static void ucs_from_cfgfile(FILE *cf,user_commands *uc)
 {
@@ -590,7 +592,7 @@ static void ucs_from_cfgfile(FILE *cf,user_commands *uc)
 
     while(1)
     {
-        if(1==(rval=fscanf(cf,"editor=%a[^\n]\n",&line)))
+        if(1==(rval=fscanf(cf,"editor=%m[^\n]\n",&line)))
         {
             nline++;
             DEBUGPR("editor %s found from cfg file line %u\n",line,nline);
@@ -619,7 +621,7 @@ static void udplog_from_cfgfile(FILE *cf,fileargs *farg)
 
     while(1)
     {
-        if(1==(rval=fscanf(cf,"capturefile=%a[^\n]\n",&line)))
+        if(1==(rval=fscanf(cf,"capturefile=%m[^\n]\n",&line)))
         {
             nline++;
             DEBUGPR("capturefile %s found from cfg file line %u\n",line,nline);
@@ -649,7 +651,7 @@ static int filters_from_cfgfile(stringfilter *filters,FILE *cf)
 
     while(1)
     {
-        if(1==(rval=fscanf(cf,"filter=%a[^\n]\n",&filter)))
+        if(1==(rval=fscanf(cf,"filter=%m[^\n]\n",&filter)))
         {
             nline++;
             DEBUGPR("Filter string %s found from cfg file line %u\n",filter,nline);
@@ -701,12 +703,12 @@ void configfile_getports(FILE *cf, unsigned short *fcmport, unsigned short *fspp
     if(!*fcmport)
     {
         rewind(cf);
-        *fcmport = (unsigned short)scan_uint(cf,"fcmport=%a[^\n]\n");
+        *fcmport = (unsigned short)scan_uint(cf,"fcmport=%m[^\n]\n");
     }
     if(!*fspport)
     {
         rewind(cf);
-        *fspport = (unsigned short)scan_uint(cf,"fspport=%a[^\n]\n");
+        *fspport = (unsigned short)scan_uint(cf,"fspport=%m[^\n]\n");
     }
     DEBUGPR("leaving configfile_getports():, current fcm=0x%hx, fsp=0x%hx\n",*fcmport,*fspport);
 
@@ -718,9 +720,9 @@ void configfile_getips(FILE *cf, uint32_t *fcmip, uint32_t *fspip)
     if(!cf || !fcmip || !fspip)
         return;
     if(!*fcmip)
-        *fcmip = scan_ip(cf,"fcmip=%a[^\n]\n");
+        *fcmip = scan_ip(cf,"fcmip=%m[^\n]\n");
     if(!*fspip)
-        *fspip = scan_ip(cf,"fspip=%a[^\n]\n");
+        *fspip = scan_ip(cf,"fspip=%m[^\n]\n");
     DEBUGPR("leaving configfile_getips():, current fcm=0x%x, fsp=0x%x\n",*fcmip,*fspip);
 
 }
@@ -731,7 +733,7 @@ int main(int argc, char *argv[])
 	int ch;
     int index;
     //pthread_t tid;
-    sockstruct samant;
+    sockstruct samant = {0};
     stringfilter *filters;
     char *dbglogname=NULL;
     char *udplogname=NULL;

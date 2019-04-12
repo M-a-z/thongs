@@ -169,7 +169,7 @@ int read_payload(shitemsglist *msgs,FILE *file,int convert,int *line)
     
     while(1)
     {
-        rval=fscanf(file,"%a[^\n]\n",&lines);
+        rval=fscanf(file,"%m[^\n]\n",&lines);
         if(1!=rval)
             return -1;
         (*line)++;
@@ -287,7 +287,7 @@ int get_message_from_file(shitemsgparser *_this,FILE *msgfile)
 
     while(1)
     {
-        if((rval=fscanf(msgfile,"%a[^:]:%a[^\n]\n",&type,&value)))
+        if((rval=fscanf(msgfile,"%m[^:]:%m[^\n]\n",&type,&value)))
             line++;
         if(rval>0 && EOF != rval)
             if('#'==type[0])
@@ -326,7 +326,7 @@ int get_message_from_file(shitemsgparser *_this,FILE *msgfile)
                 else
                 {
                     for(tmpmsgs=_this->msgs;tmpmsgs->next;tmpmsgs=tmpmsgs->next);
-                        tmpmsgs->next=msgs;
+                    tmpmsgs->next=msgs;
                 }
     //            msgs=calloc(1,sizeof(shitemsglist));
                 funcret=0;
@@ -472,7 +472,7 @@ int get_message_from_file(shitemsgparser *_this,FILE *msgfile)
         }
         else if(!rval)
         {
-            if((rval=fscanf(msgfile,"%a[^\n]\n",&type)))
+            if((rval=fscanf(msgfile,"%m[^\n]\n",&type)))
                 line++;
             if(1==rval)
             {

@@ -57,7 +57,7 @@ static void get_structs(FILE *structfile, int *id)
     char tmpstructcontent[2048]={0};
     int rval;
     int i;
-	while( EOF!=(rval=fscanf(structfile,"struct %a[^\n]\n",&structname)) && *id<MAX_DEFFIND_ID)
+	while( EOF!=(rval=fscanf(structfile,"struct %m[^\n]\n",&structname)) && *id<MAX_DEFFIND_ID)
 	{
         if(rval==1 && structname)
         {
@@ -102,7 +102,7 @@ static void get_structs(FILE *structfile, int *id)
         }
         else
         {
-            if(EOF==(rval=fscanf(structfile,"%a[^\n]\n",&structname)) || rval<1)
+            if(EOF==(rval=fscanf(structfile,"%m[^\n]\n",&structname)) || rval<1)
             {
                 break;
             }
@@ -151,7 +151,7 @@ static void get_tasks(FILE *file, int *id)
     char *base;
     int rval;
     char *junk;
-    while( EOF!=(rval=fscanf(file,"#define %a[^\n]\n",&junk)) && *id<MAX_DEFFIND_ID)
+    while( EOF!=(rval=fscanf(file,"#define %m[^\n]\n",&junk)) && *id<MAX_DEFFIND_ID)
     {
         unsigned short taskid=0;
         char *tmp;

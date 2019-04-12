@@ -94,7 +94,7 @@ static void init_mem_regions()
     BS_R_WATERMARK=BS_WATERMARK;
     DEFAULT_SCROLL_MAP_SIZE=BS_AREA_SIZE*2;
     PRINTLINEPTRAMNT=BS_AREA_SIZE/ASSUMED_AVG_PRINT_LEN;
-    DEBUGPR("mem region sizes set: page size=0x%x,BS_AREA_SIZE=0x%x,BS_WATERMARK=0x%x,DEFAULT_SCROLL_MAP_SIZE=0x%x\n",G_pagesize,BS_AREA_SIZE,BS_WATERMARK,DEFAULT_SCROLL_MAP_SIZE);
+    DEBUGPR("mem region sizes set: page size=0x%x,BS_AREA_SIZE=0x%x,BS_WATERMARK=0x%x,DEFAULT_SCROLL_MAP_SIZE=0x%x\n",(unsigned int)G_pagesize,(unsigned int)BS_AREA_SIZE,(unsigned int)BS_WATERMARK,(unsigned int)DEFAULT_SCROLL_MAP_SIZE);
 }
 
 void udp_file_flush(void *arg)
@@ -180,7 +180,7 @@ underlying_file *realfile_init(char *filename,size_t max_filesize,int rotateamnt
     underlying_file *_this=NULL;
     if(max_filesize && max_filesize<BS_AREA_SIZE)
     {
-        DEBUGPR("minimum UDP file size id %u",BS_AREA_SIZE);
+        DEBUGPR("minimum UDP file size id %u",(int)BS_AREA_SIZE);
     }
     else
         _this=calloc(1,sizeof(underlying_file));
@@ -385,7 +385,7 @@ static void remap_scrollwin(underlying_file *_this,int offsetchange)
         _this->s_mapped_start+offsetchange > REALFILESIZE(_this) 
     )
     {
-        DEBUGPR("Can't remap: _this->s_mapped_start+offsetchange = %d, REALFILESIZE = %u\n",_this->s_mapped_start+offsetchange,REALFILESIZE(_this));
+        DEBUGPR("Can't remap: _this->s_mapped_start+offsetchange = %d, REALFILESIZE = %lu\n",(int)_this->s_mapped_start+offsetchange,REALFILESIZE(_this));
         return;
     }
     VERBOSE_DEBUGPR("Remapping scroll_win: offset %d\n",offsetchange);
